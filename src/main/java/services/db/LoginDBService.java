@@ -5,20 +5,6 @@ import java.sql.SQLException;
 
 public class LoginDBService {
 
-    public String getPassByLogin(String login) {
-        String password = null;
-        DataBaseService dataBaseService = new DataBaseService();
-        String sql = "select e.\"password\" from employees e where e.login = '" + login + "' ";
-        ResultSet resultSet = dataBaseService.select(sql);
-        try {
-            resultSet.next();
-            password = resultSet.getString("password");
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-        return password;
-    }
-
     public String getOrgPassByLogin(String login) {
         String password = null;
         DataBaseService dataBaseService = new DataBaseService();
