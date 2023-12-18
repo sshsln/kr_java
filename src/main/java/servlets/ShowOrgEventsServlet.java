@@ -33,7 +33,6 @@ public class ShowOrgEventsServlet extends HttpServlet {
                 request.setAttribute("errorText", "Вы ещё не организовали ни одного мероприятия!");
                 request.getRequestDispatcher("/pages/show_org_events.jsp").forward(request, response);
             }
-            //super.doGet(request, response);
         } else {
             response.sendRedirect(request.getContextPath() + "/org_options");
         }
@@ -49,8 +48,6 @@ public class ShowOrgEventsServlet extends HttpServlet {
             } else {
                 response.getWriter().println("Неопределенный тип кнопки");
             }
-        } else {
-            response.getWriter().println("Кнопка не выбрана");
         }
     }
 }

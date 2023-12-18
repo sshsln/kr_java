@@ -24,7 +24,6 @@ public class ShowVisEventsServlet extends HttpServlet {
             request.setAttribute("errorText", "Нет предстоящих мероприятий! Заходите позже!");
             request.getRequestDispatcher("/pages/show_vis_events.jsp").forward(request, response);
         }
-        //super.doGet(request, response);
     }
 
     @Override
@@ -37,8 +36,6 @@ public class ShowVisEventsServlet extends HttpServlet {
             } else {
                 response.getWriter().println("Неопределенный тип кнопки");
             }
-        } else {
-            response.getWriter().println("Кнопка не выбрана");
         }
     }
 }

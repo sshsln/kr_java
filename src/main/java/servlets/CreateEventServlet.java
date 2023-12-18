@@ -19,7 +19,6 @@ public class CreateEventServlet extends HttpServlet {
             String session = (String) request.getSession().getAttribute("session");
             request.setAttribute("session", session);
             request.getRequestDispatcher("/pages/create_event.jsp").forward(request, response);
-            //super.doGet(request, response);
         } else {
             response.sendRedirect(request.getContextPath() + "/org_options");
         }
@@ -65,8 +64,6 @@ public class CreateEventServlet extends HttpServlet {
             } else {
                 response.getWriter().println("Неопределенный тип кнопки");
             }
-        } else {
-            response.getWriter().println("Кнопка не выбрана");
         }
     }
 }

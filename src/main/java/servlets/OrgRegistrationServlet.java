@@ -15,7 +15,6 @@ public class OrgRegistrationServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         request.getRequestDispatcher("/pages/org_registration.jsp").forward(request, response);
-        //super.doGet(request, response);
     }
 
     @Override
@@ -48,8 +47,6 @@ public class OrgRegistrationServlet extends HttpServlet {
             } else {
                 response.getWriter().println("Неопределенный тип кнопки");
             }
-        } else {
-            response.getWriter().println("Кнопка не выбрана");
         }
     }
 }

@@ -27,7 +27,6 @@ public class EditEventServlet extends HttpServlet {
             List<Event> events = orgDBService.showUpcomingOrgEvents(organizer);
             request.setAttribute("events", events);
             request.getRequestDispatcher("/pages/edit_event.jsp").forward(request, response);
-            //super.doGet(request, response);
         } else {
             response.sendRedirect(request.getContextPath() + "/org_options");
         }
@@ -72,8 +71,6 @@ public class EditEventServlet extends HttpServlet {
             } else {
                 response.getWriter().println("Неопределенный тип кнопки");
             }
-        } else {
-            response.getWriter().println("Кнопка не выбрана");
         }
     }
 }
