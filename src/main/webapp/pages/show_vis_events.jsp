@@ -35,6 +35,7 @@
         <% } %>
         </tbody>
     </table>
+    <br>
     <form action="show_vis_events" method="post">
         <button class="greenButton" name="buttonType" value="visitorButton"> Вернуться на страницу организатора </button>
     </form>
