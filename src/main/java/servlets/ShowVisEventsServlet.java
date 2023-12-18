@@ -19,9 +19,11 @@ public class ShowVisEventsServlet extends HttpServlet{
                 request.setAttribute("events", events);
                 request.getRequestDispatcher("/pages/show_vis_events.jsp").forward(request, response);
             } else {
-                response.getWriter().println("Нет предстоящих мероприятий");
+                request.setAttribute("events", events);
+                request.setAttribute("errorText", "Нет предстоящих мероприятий! Заходите позже!");
+                request.getRequestDispatcher("/pages/show_vis_events.jsp").forward(request, response);
             }
-            super.doGet(request, response);
+            //super.doGet(request, response);
     }
 
     @Override

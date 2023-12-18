@@ -12,7 +12,7 @@
 
 <body bgcolor=DarkSeaGreen>
 <div class="comicClass">
-    Регистрация на мероприятие
+    Регистрация на мероприятие<br><br>
     <form action="registration" method="post">
         Выберите мероприятие:
         <select class="comicField" name="event_id">

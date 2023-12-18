@@ -11,7 +11,7 @@
 
 <body bgcolor=DarkSeaGreen>
 <div class="comicClass">
-    Создание мероприятия
+    Создание мероприятия<br><br>
     <form action="create_event" method="post">
         Название мероприятия: <input class="comicField" type="text" name="event_name" /><br>
         Дата проведения: <input class="comicField" type="datetime-local" name="date" /><br>

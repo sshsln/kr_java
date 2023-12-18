@@ -14,7 +14,7 @@ public class OrgLoginServlet extends HttpServlet{
         request.setAttribute("errorText", "");
         response.setContentType("text/html;charset=UTF-8");
         request.getRequestDispatcher("/pages/org_login.jsp").forward(request, response);
-        super.doGet(request, response);
+        //super.doGet(request, response);
     }
 
     @Override
@@ -33,7 +33,7 @@ public class OrgLoginServlet extends HttpServlet{
                     response.addHeader("session",session);
                     response.sendRedirect(request.getContextPath() + "/organizer");
                 } else {
-                    request.setAttribute("errorText", "Error login or password");
+                    request.setAttribute("errorText", "Неправильный логин или пароль. Повторите попытку входа.");
                     request.getRequestDispatcher("/pages/org_login.jsp").forward(request, response);
                     super.doPost(request, response);
                 }

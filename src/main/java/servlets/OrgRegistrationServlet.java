@@ -14,7 +14,7 @@ public class OrgRegistrationServlet extends HttpServlet{
         request.setAttribute("errorText", "");
         response.setContentType("text/html;charset=UTF-8");
         request.getRequestDispatcher("/pages/org_registration.jsp").forward(request, response);
-        super.doGet(request, response);
+        //super.doGet(request, response);
     }
 
     @Override
@@ -25,7 +25,7 @@ public class OrgRegistrationServlet extends HttpServlet{
             if ("organizerButton".equals(buttonType)) {
                 Organizer newOrganizer = new Organizer(request);
                 if (newOrganizer.getLogin() == null || newOrganizer.getLogin().trim().isEmpty() || newOrganizer.getOrg_name() == null || newOrganizer.getOrg_name().trim().isEmpty() || newOrganizer.getPassword() == null || newOrganizer.getPassword().trim().isEmpty()) {
-                    request.setAttribute("errorText", "Error registration. Please fill in all field.");
+                    request.setAttribute("errorText", "Ошибка регистрации. Убедитесь, что все поля заполнены.");
                     request.getRequestDispatcher("/pages/org_registration.jsp").forward(request, response);
                     return;
                 }
@@ -38,7 +38,7 @@ public class OrgRegistrationServlet extends HttpServlet{
                     response.addHeader("session", session);
                     response.sendRedirect(request.getContextPath() + "/organizer");
                 } else {
-                    request.setAttribute("errorText", "Login already used. Change it.");
+                    request.setAttribute("errorText", "Логин уже занят. Пожалуйста, измените его.");
                     request.getRequestDispatcher("/pages/org_registration.jsp").forward(request, response);
                     return;
                 }

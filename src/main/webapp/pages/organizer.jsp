@@ -12,11 +12,11 @@
 <div class="comicClass">
   Страница организатора<br><br>
   <form action="organizer" method="post">
-    <button class="greenButton" name="buttonType" value="createEventButton"> Создать мероприятие </button><br>
-    <button class="greenButton" name="buttonType" value="showOrgEventsButton"> Посмотреть данные своих мероприятий </button><br>
-    <button class="greenButton" name="buttonType" value="editEventButton"> Редактировать данные о мероприятии </button><br>
-    <button class="greenButton" name="buttonType" value="deleteEventButton"> Отменить мероприятие </button><br>
-    <button class="greenButton" name="buttonType" value="exitButton"> Выйти </button><br>
+    <button class="greenButton" name="buttonType" value="createEventButton"> Создать мероприятие </button><br><br>
+    <button class="greenButton" name="buttonType" value="showOrgEventsButton"> Посмотреть данные своих мероприятий </button><br><br>
+    <button class="greenButton" name="buttonType" value="editEventButton"> Редактировать данные о мероприятии </button><br><br>
+    <button class="greenButton" name="buttonType" value="deleteEventButton"> Отменить мероприятие </button><br><br>
+    <button class="greenButton" name="buttonType" value="exitButton"> Выйти </button><br><br>
   </form>
 </div>
 </body>

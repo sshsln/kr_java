@@ -25,13 +25,14 @@ public class ShowOrgEventsServlet extends HttpServlet{
             OrgDBService orgDBService = new OrgDBService();
             List<Event> events = orgDBService.showOrgEvents(organizer);
             if (!events.isEmpty()) {
-                request.setAttribute("events", events);
-                request.getRequestDispatcher("/pages/show_org_events.jsp").forward(request, response);
+            request.setAttribute("events", events);
+            request.getRequestDispatcher("/pages/show_org_events.jsp").forward(request, response);
             } else {
                 request.setAttribute("events", events);
+                request.setAttribute("errorText", "Вы ещё не организовали ни одного мероприятия!");
                 request.getRequestDispatcher("/pages/show_org_events.jsp").forward(request, response);
             }
-            super.doGet(request, response);
+            //super.doGet(request, response);
         } else {
             response.sendRedirect(request.getContextPath() + "/org_options");
         }

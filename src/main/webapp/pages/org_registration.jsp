@@ -18,7 +18,7 @@
     <input class="comicField" name="org_name" id="org_name" type="text" /><br>
     <label>Пароль:</label><br>
     <input class="comicField" name="password" id="password" type="password" /><br>
-    <span>${requestScope.errorText}</span><br>
+    <span>${requestScope.errorText}</span><br><br>
     <button class="greenButton" name="buttonType" value="organizerButton"> Войти </button><br><br>
     <button class="greenButton" name="buttonType" value="orgOptionsButton"> Отменить регистрацию </button><br><br>
   </form>

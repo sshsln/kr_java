@@ -12,7 +12,7 @@
 
 <body bgcolor=DarkSeaGreen>
 <div class="comicClass">
-    Редактирование мероприятия
+    Редактирование мероприятия<br><br>
     <form action="edit_event" method="post">
         Выберите мероприятие для редактирования:
         <select class="comicField" name="event_id">

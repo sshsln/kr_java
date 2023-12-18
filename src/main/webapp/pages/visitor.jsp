@@ -12,10 +12,10 @@
 <div class="comicClass">
     Страница посетителя<br><br>
     <form action="visitor" method="post">
-    <button class="greenButton" name="buttonType" value="showVisEventsButton"> Просмотреть список предстоящих мероприятий </button><br>
-    <button class="greenButton" name="buttonType" value="registrationButton"> Зарегистрироваться на мероприятие </button><br>
-    <button class="greenButton" name="buttonType" value="cancelRegistrationButton"> Отменить регистрацию </button><br>
-    <button class="greenButton" name="buttonType" value="exitButton"> Выйти </button><br>
+    <button class="greenButton" name="buttonType" value="showVisEventsButton"> Просмотреть список предстоящих мероприятий </button><br><br>
+    <button class="greenButton" name="buttonType" value="registrationButton"> Зарегистрироваться на мероприятие </button><br><br>
+    <button class="greenButton" name="buttonType" value="cancelRegistrationButton"> Отменить регистрацию </button><br><br>
+    <button class="greenButton" name="buttonType" value="exitButton"> Выйти </button><br><br>
     </form>
 </div>
 </body>

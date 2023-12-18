@@ -3,7 +3,6 @@ import model.Event;
 import model.Organizer;
 import services.LoginService;
 import services.db.OrgDBService;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,7 +17,7 @@ public class CreateEventServlet extends HttpServlet{
             request.setAttribute("session", session);
             response.setContentType("text/html;charset=UTF-8");
             request.getRequestDispatcher("/pages/create_event.jsp").forward(request, response);
-            super.doGet(request, response);
+            //super.doGet(request, response);
         } else {
             response.sendRedirect(request.getContextPath() + "/org_options");
         }
@@ -37,7 +36,7 @@ public class CreateEventServlet extends HttpServlet{
                     String date = request.getParameter("date");
                     String location = request.getParameter("location");
                     if (eventName == null || eventName.trim().isEmpty() || date == null || date.trim().isEmpty() || location == null || location.trim().isEmpty()){
-                        request.setAttribute("errorMessage", "Error create event. Please fill in all field.");
+                        request.setAttribute("errorMessage", "Ошибка создания мероприятия. Убедитесь, что все поля заполнены.");
                         request.getRequestDispatcher("/pages/create_event.jsp").forward(request, response);
                         return;
                     }
@@ -53,9 +52,9 @@ public class CreateEventServlet extends HttpServlet{
                     OrgDBService orgDBService = new OrgDBService();
                     boolean success = orgDBService.createEvent(organizer, event);
                     if (success) {
-                        request.setAttribute("successMessage", "Event create successfully!");
+                        request.setAttribute("successMessage", "Мероприятие успешно создано!");
                     } else {
-                        request.setAttribute("errorMessage", "Error create event.");
+                        request.setAttribute("errorMessage", "Ошибка при создании мероприятия.");
                     }
                     request.getRequestDispatcher("/pages/create_event.jsp").forward(request, response);
                 }

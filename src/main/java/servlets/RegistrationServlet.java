@@ -29,7 +29,7 @@ public class RegistrationServlet extends HttpServlet{
                     String visitor_name = request.getParameter("visitor_name");
                     String email = request.getParameter("email");
                 if (visitor_name == null || visitor_name.trim().isEmpty() || email == null || email.trim().isEmpty()) {
-                    request.setAttribute("errorMessage", "Error registration. Please provide a valid name and email.");
+                    request.setAttribute("errorMessage", "Ошибка регистрации! Заполните все поля.");
                     request.getRequestDispatcher("/pages/registration.jsp").forward(request, response);
                     return;
                 }
@@ -50,9 +50,9 @@ public class RegistrationServlet extends HttpServlet{
                     visitorId = newVisitor.getId_v();
                     boolean success = visDBService.createRegistration(event.getId_e(), visitorId);
                     if (success) {
-                        request.setAttribute("successMessage", "Registration was successful!");
+                        request.setAttribute("successMessage", "Вы успешно зарегистрировались на мероприятие!");
                     } else {
-                        request.setAttribute("errorMessage", "Error registration.");
+                        request.setAttribute("errorMessage", "Ошибка регистрации.");
                     }
                     request.getRequestDispatcher("/pages/registration.jsp").forward(request, response);
             } else if ("visitorButton".equals(buttonType)) {

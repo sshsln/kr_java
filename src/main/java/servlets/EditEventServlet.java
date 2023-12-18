@@ -3,7 +3,6 @@ import model.Event;
 import model.Organizer;
 import services.LoginService;
 import services.db.OrgDBService;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -26,7 +25,7 @@ public class EditEventServlet extends HttpServlet{
             List<Event> events = orgDBService.showUpcomingOrgEvents(organizer);
             request.setAttribute("events", events);
             request.getRequestDispatcher("/pages/edit_event.jsp").forward(request, response);
-            super.doGet(request, response);
+            //super.doGet(request, response);
         } else {
             response.sendRedirect(request.getContextPath() + "/org_options");
         }
@@ -45,7 +44,7 @@ public class EditEventServlet extends HttpServlet{
                     String date = request.getParameter("date");
                     String location = request.getParameter("location");
                     if (date == null || date.trim().isEmpty() || location == null || location.trim().isEmpty()){
-                        request.setAttribute("errorMessage", "Error edit event. Please fill in all field.");
+                        request.setAttribute("errorMessage", "Ошибка редактирования данных. Заполните все поля.");
                         request.getRequestDispatcher("/pages/edit_event.jsp").forward(request, response);
                         return;
                     }
@@ -60,9 +59,9 @@ public class EditEventServlet extends HttpServlet{
                     OrgDBService orgDBService = new OrgDBService();
                     boolean success = orgDBService.editEvent(organizer, event);
                     if (success) {
-                        request.setAttribute("successMessage", "Event edit successfully!");
+                        request.setAttribute("successMessage", "Данные успешно отредактированы!");
                     } else {
-                        request.setAttribute("errorMessage", "Error edit event.");
+                        request.setAttribute("errorMessage", "Ошибка редактирования данных.");
                     }
                     request.getRequestDispatcher("/pages/edit_event.jsp").forward(request, response);
                 }

@@ -3,7 +3,6 @@ import model.Event;
 import model.Organizer;
 import services.LoginService;
 import services.db.OrgDBService;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -26,7 +25,7 @@ public class DeleteEventServlet extends HttpServlet{
             List<Event> events = orgDBService.showUpcomingOrgEvents(organizer);
             request.setAttribute("events", events);
             request.getRequestDispatcher("/pages/delete_event.jsp").forward(request, response);
-            super.doGet(request, response);
+            //super.doGet(request, response);
         } else {
             response.sendRedirect(request.getContextPath() + "/org_options");
         }
@@ -42,6 +41,11 @@ public class DeleteEventServlet extends HttpServlet{
                     String session = (String) request.getSession().getAttribute("session");
                     response.addHeader("session",session);
                     String selectedEventId = request.getParameter("event_id");
+                    if (selectedEventId == null || selectedEventId.trim().isEmpty()){
+                        request.setAttribute("errorMessage", "Ошибка отмены мероприятия. Мероприятие для отмены не выбрано!");
+                        request.getRequestDispatcher("/pages/delete_event.jsp").forward(request, response);
+                        return;
+                    }
                     LoginService loginService = new LoginService();
                     String organizerLogin = loginService.getLoginBySession(session);
                     Organizer organizer = new Organizer();
@@ -51,9 +55,11 @@ public class DeleteEventServlet extends HttpServlet{
                     OrgDBService orgDBService = new OrgDBService();
                     boolean success = orgDBService.deleteEvent(organizer, event);
                     if (success) {
-                        request.setAttribute("successMessage", "Event delete successfully!");
+                        request.setAttribute("successMessage", "Вы успешно отменили мероприятие!");
+                        request.getRequestDispatcher("/pages/delete_event.jsp").forward(request, response);
                     } else {
-                        request.setAttribute("errorMessage", "Error delete event.");
+                        request.setAttribute("errorMessage", "Ошибка отмены мероприятия.");
+                        request.getRequestDispatcher("/pages/delete_event.jsp").forward(request, response);
                     }
                     request.getRequestDispatcher("/pages/delete_event.jsp").forward(request, response);
                 }

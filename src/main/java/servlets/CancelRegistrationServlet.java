@@ -28,7 +28,7 @@ public class CancelRegistrationServlet extends HttpServlet{
                 String selectedEventId = request.getParameter("event_id");
                 String email = request.getParameter("email");
                 if (email == null || email.trim().isEmpty()) {
-                    request.setAttribute("errorMessage", "Error cancel registration. Please provide a valid email.");
+                    request.setAttribute("errorMessage", "Ошибка отмены регистрации. Убедитесь в корректности введённого email.");
                     request.getRequestDispatcher("/pages/cancel_registration.jsp").forward(request, response);
                     return;
                 }
@@ -37,14 +37,12 @@ public class CancelRegistrationServlet extends HttpServlet{
                 Event event = new Event();
                 event.setId_e(Integer.parseInt(selectedEventId));
                 VisDBService visDBService = new VisDBService();
-
-
                 boolean checkReg = visDBService.isRegistrationExist(email, Integer.parseInt(selectedEventId));
                 if (checkReg) {
                     boolean regExist = visDBService.cancelRegistration(email, Integer.parseInt(selectedEventId));
-                    request.setAttribute("successMessage", "Registration successfully canceled!");
+                    request.setAttribute("successMessage", "Регистрация на мероприятие отменена!");
                 } else {
-                    request.setAttribute("errorMessage", "Error! You are not registered for this event.");
+                    request.setAttribute("errorMessage", "Ошибка. Вы не регистрировались на это мероприятие.");
                 }
                 request.getRequestDispatcher("/pages/cancel_registration.jsp").forward(request, response);
             } else if ("visitorButton".equals(buttonType)) {

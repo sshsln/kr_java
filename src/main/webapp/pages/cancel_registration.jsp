@@ -12,7 +12,7 @@
 
 <body bgcolor=DarkSeaGreen>
 <div class="comicClass">
-    Отмена регистрации на мероприятие
+    Отмена регистрации на мероприятие<br><br>
     <form action="cancel_registration" method="post">
         Ваш email: <input class="comicField" type="email" name="email" /><br><br>
         Выберите мероприятие:

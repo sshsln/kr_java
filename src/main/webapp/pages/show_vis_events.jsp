@@ -8,13 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Предстоящие мероприятия</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <style> table {border-collapse: collapse;}table, th, td {border: 1px solid black;} </style>
 </head>
 
 <body bgcolor=DarkSeaGreen>
 <div class="comicClass">
-    Предстоящие мероприятия
+    Предстоящие мероприятия<br><br>
         <% if (request.getAttribute("events") != null) { %>
-    <table style="border: 1px solid black">
+    <table>
         <thead>
         <tr>
             <th>Название мероприятия</th>
@@ -35,13 +36,11 @@
         <% } %>
         </tbody>
     </table>
-    <br>
-    <form action="show_vis_events" method="post">
-        <button class="greenButton" name="buttonType" value="visitorButton"> Вернуться на страницу организатора </button>
-    </form>
         <% } else { %>
         <% } %>
-
+    <br><span>${requestScope.errorText}</span><br><br>
+    <form action="show_vis_events" method="post">
+        <button class="greenButton" name="buttonType" value="visitorButton"> Вернуться на страницу посетителя </button>
+    </form>
 </body>
-
 </html>

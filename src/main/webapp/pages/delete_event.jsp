@@ -12,7 +12,7 @@
 
 <body bgcolor=DarkSeaGreen>
 <div class="comicClass">
-  Отмена мероприятия
+  Отмена мероприятия<br><br>
   <form action="delete_event" method="post">
     Выберите мероприятие для отмены:
     <select class="comicField" name="event_id">
