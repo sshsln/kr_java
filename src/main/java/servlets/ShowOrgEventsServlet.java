@@ -1,4 +1,5 @@
 package servlets;
+
 import model.Event;
 import model.Organizer;
 import services.LoginService;
@@ -11,13 +12,13 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-public class ShowOrgEventsServlet extends HttpServlet{
+public class ShowOrgEventsServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
         if (request.getSession().getAttribute("session") != null) {
             String session = (String) request.getSession().getAttribute("session");
             request.setAttribute("session", session);
-            response.setContentType("text/html;charset=UTF-8");
             LoginService loginService = new LoginService();
             String organizerLogin = loginService.getLoginBySession(session);
             Organizer organizer = new Organizer();
@@ -25,8 +26,8 @@ public class ShowOrgEventsServlet extends HttpServlet{
             OrgDBService orgDBService = new OrgDBService();
             List<Event> events = orgDBService.showOrgEvents(organizer);
             if (!events.isEmpty()) {
-            request.setAttribute("events", events);
-            request.getRequestDispatcher("/pages/show_org_events.jsp").forward(request, response);
+                request.setAttribute("events", events);
+                request.getRequestDispatcher("/pages/show_org_events.jsp").forward(request, response);
             } else {
                 request.setAttribute("events", events);
                 request.setAttribute("errorText", "Вы ещё не организовали ни одного мероприятия!");

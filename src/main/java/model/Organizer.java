@@ -1,5 +1,7 @@
 package model;
+
 import lombok.Data;
+
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
@@ -20,7 +22,7 @@ public class Organizer {
         this.eventList = eventList;
     }
 
-    public Organizer(HttpServletRequest request){
+    public Organizer(HttpServletRequest request) {
         this.login = request.getParameter("login");
         this.org_name = request.getParameter("org_name");
         this.password = request.getParameter("password");

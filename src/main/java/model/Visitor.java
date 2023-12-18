@@ -1,6 +1,7 @@
 package model;
+
 import lombok.Data;
-import javax.servlet.http.HttpServletRequest;
+
 import java.util.List;
 
 @Data
@@ -10,7 +11,8 @@ public class Visitor {
     private String email;
     private List<Registration> registrationList;
 
-    public Visitor() { }
+    public Visitor() {
+    }
 
     public Visitor(Integer id_v, String visitor_name, String email, List<Registration> registrationList) {
         this.id_v = id_v;

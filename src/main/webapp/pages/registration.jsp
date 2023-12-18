@@ -25,16 +25,19 @@
             <% }
             } %>
         </select><br>
-        Ваше имя: <input class="comicField" type="text" name="visitor_name" /><br><br>
-        Ваш email: <input class="comicField" type="email" name="email" /><br><br>
-        <button class="greenButton" name="buttonType" value="registrationButton"> Зарегистрироваться </button><br><br>
+        Ваше имя: <input class="comicField" type="text" name="visitor_name"/><br><br>
+        Ваш email: <input class="comicField" type="email" name="email"/><br><br>
+        <button class="greenButton" name="buttonType" value="registrationButton"> Зарегистрироваться</button>
+        <br><br>
         <% if (request.getAttribute("successMessage") != null) { %>
-        <div class="successMessage"><%= request.getAttribute("successMessage") %></div>
+        <div class="successMessage"><%= request.getAttribute("successMessage") %>
+        </div>
         <% } %>
         <% if (request.getAttribute("errorMessage") != null) { %>
-        <div class="errorMessage"><%= request.getAttribute("errorMessage") %></div>
+        <div class="errorMessage"><%= request.getAttribute("errorMessage") %>
+        </div>
         <% } %>
-        <button class="greenButton" name="buttonType" value="visitorButton"> Вернуться на страницу посетителя </button>
+        <button class="greenButton" name="buttonType" value="visitorButton"> Вернуться на страницу посетителя</button>
     </form>
 </div>
 </body>

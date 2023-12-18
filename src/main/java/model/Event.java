@@ -1,5 +1,7 @@
 package model;
+
 import lombok.Data;
+
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
@@ -28,7 +30,7 @@ public class Event {
     }
 
     public Event(HttpServletRequest request) {
-       this.event_name = request.getParameter("event_name");
+        this.event_name = request.getParameter("event_name");
         this.date = request.getParameter("date");
         this.location = request.getParameter("location");
     }

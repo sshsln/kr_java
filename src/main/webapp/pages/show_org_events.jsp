@@ -8,7 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Мои мероприятия</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <style> table {border-collapse: collapse;}table, th, td {border: 1px solid black;} </style>
+    <style> table {
+        border-collapse: collapse;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+    } </style>
 </head>
 
 <body bgcolor=DarkSeaGreen>
@@ -28,10 +34,14 @@
         <% List<Event> events = (List<Event>) request.getAttribute("events");
             for (Event event : events) { %>
         <tr>
-            <td><%= event.getEvent_name() %></td>
-            <td><%= event.getDate() %></td>
-            <td><%= event.getLocation() %></td>
-            <td><%= event.getVis_count() %></td>
+            <td><%= event.getEvent_name() %>
+            </td>
+            <td><%= event.getDate() %>
+            </td>
+            <td><%= event.getLocation() %>
+            </td>
+            <td><%= event.getVis_count() %>
+            </td>
         </tr>
         <% } %>
         </tbody>
@@ -40,7 +50,8 @@
         <% } %>
     <br><span>${requestScope.errorText}</span><br><br>
     <form action="show_org_events" method="post">
-        <button class="greenButton" name="buttonType" value="organizerButton"> Вернуться на страницу организатора </button>
+        <button class="greenButton" name="buttonType" value="organizerButton"> Вернуться на страницу организатора
+        </button>
     </form>
 
 </body>

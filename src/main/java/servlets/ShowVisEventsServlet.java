@@ -1,4 +1,5 @@
 package servlets;
+
 import model.Event;
 import services.db.VisDBService;
 
@@ -9,21 +10,21 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-public class ShowVisEventsServlet extends HttpServlet{
+public class ShowVisEventsServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-            response.setContentType("text/html;charset=UTF-8");
-            VisDBService visDBService = new VisDBService();
-            List<Event> events = visDBService.showVisEvents();
-            if (!events.isEmpty()) {
-                request.setAttribute("events", events);
-                request.getRequestDispatcher("/pages/show_vis_events.jsp").forward(request, response);
-            } else {
-                request.setAttribute("events", events);
-                request.setAttribute("errorText", "Нет предстоящих мероприятий! Заходите позже!");
-                request.getRequestDispatcher("/pages/show_vis_events.jsp").forward(request, response);
-            }
-            //super.doGet(request, response);
+        response.setContentType("text/html;charset=UTF-8");
+        VisDBService visDBService = new VisDBService();
+        List<Event> events = visDBService.showVisEvents();
+        if (!events.isEmpty()) {
+            request.setAttribute("events", events);
+            request.getRequestDispatcher("/pages/show_vis_events.jsp").forward(request, response);
+        } else {
+            request.setAttribute("events", events);
+            request.setAttribute("errorText", "Нет предстоящих мероприятий! Заходите позже!");
+            request.getRequestDispatcher("/pages/show_vis_events.jsp").forward(request, response);
+        }
+        //super.doGet(request, response);
     }
 
     @Override

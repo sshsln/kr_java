@@ -1,7 +1,6 @@
 package model;
+
 import lombok.Data;
-import javax.servlet.http.HttpServletRequest;
-import java.util.List;
 
 @Data
 public class Registration {

@@ -1,6 +1,8 @@
 package services.db;
+
 import model.Event;
 import model.Organizer;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -11,13 +13,13 @@ import java.time.format.DateTimeFormatter;
 
 public class OrgDBService {
 
-    public Boolean registrationOrg(Organizer organizer){
+    public Boolean registrationOrg(Organizer organizer) {
         Boolean isSuccess = false;
         DataBaseService dataBaseService = new DataBaseService();
         String sql = "INSERT INTO organizer (login, org_name, password)" +
-                "VALUES ('"+organizer.getLogin()+"', '"+organizer.getOrg_name()+"','"+organizer.getPassword()+"')";
-        if(dataBaseService.insert(sql)){
-            isSuccess =true;
+                "VALUES ('" + organizer.getLogin() + "', '" + organizer.getOrg_name() + "','" + organizer.getPassword() + "')";
+        if (dataBaseService.insert(sql)) {
+            isSuccess = true;
         } else {
         }
         return isSuccess;
@@ -38,13 +40,13 @@ public class OrgDBService {
         return isUnique;
     }
 
-    public Boolean createEvent(Organizer organizer, Event event){
+    public Boolean createEvent(Organizer organizer, Event event) {
         Boolean isSuccess = false;
         DataBaseService dataBaseService = new DataBaseService();
         String sql = "INSERT INTO event (event_name, date, organizer_n, location)" +
-                "VALUES ('"+event.getEvent_name()+"','"+event.getDate()+"','"+organizer.getLogin()+"','"+event.getLocation()+"')";
-        if(dataBaseService.insert(sql)){
-            isSuccess =true;
+                "VALUES ('" + event.getEvent_name() + "','" + event.getDate() + "','" + organizer.getLogin() + "','" + event.getLocation() + "')";
+        if (dataBaseService.insert(sql)) {
+            isSuccess = true;
         } else {
         }
         return isSuccess;
@@ -76,7 +78,7 @@ public class OrgDBService {
         LocalDateTime currentDateTime = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         String formattedDateTime = currentDateTime.format(formatter);
-        String sql = "SELECT * FROM event WHERE organizer_n = '" + organizer.getLogin() + "' AND date > '"+formattedDateTime+"' ORDER BY date ASC";
+        String sql = "SELECT * FROM event WHERE organizer_n = '" + organizer.getLogin() + "' AND date > '" + formattedDateTime + "' ORDER BY date ASC";
         try (Statement statement = dataBaseService.getConnect().createStatement()) {
             ResultSet resultSet = statement.executeQuery(sql);
             while (resultSet.next()) {
@@ -94,23 +96,23 @@ public class OrgDBService {
         return events;
     }
 
-    public Boolean editEvent(Organizer organizer, Event event){
+    public Boolean editEvent(Organizer organizer, Event event) {
         Boolean isSuccess = false;
         DataBaseService dataBaseService = new DataBaseService();
-        String sql = "UPDATE event SET date = '"+event.getDate()+"', location = '"+event.getLocation()+"' WHERE id_e = '"+event.getId_e()+"' AND organizer_n = '"+organizer.getLogin()+"'";
-        if(dataBaseService.update(sql)){
-            isSuccess =true;
+        String sql = "UPDATE event SET date = '" + event.getDate() + "', location = '" + event.getLocation() + "' WHERE id_e = '" + event.getId_e() + "' AND organizer_n = '" + organizer.getLogin() + "'";
+        if (dataBaseService.update(sql)) {
+            isSuccess = true;
         } else {
         }
         return isSuccess;
     }
 
-    public Boolean deleteEvent(Organizer organizer, Event event){
+    public Boolean deleteEvent(Organizer organizer, Event event) {
         Boolean isSuccess = false;
         DataBaseService dataBaseService = new DataBaseService();
-        String sql = "DELETE FROM event WHERE id_e = '"+event.getId_e()+"' AND organizer_n = '"+organizer.getLogin()+"'";
-        if(dataBaseService.delete(sql)){
-            isSuccess =true;
+        String sql = "DELETE FROM event WHERE id_e = '" + event.getId_e() + "' AND organizer_n = '" + organizer.getLogin() + "'";
+        if (dataBaseService.delete(sql)) {
+            isSuccess = true;
         } else {
         }
         return isSuccess;

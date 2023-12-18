@@ -25,16 +25,20 @@
             <% }
             } %>
         </select><br>
-        Новая дата проведения: <input class="comicField" type="datetime-local" name="date" /><br>
-        Новое место проведения: <input class="comicField" type="text" name="location" /><br>
-        <button class="greenButton" name="buttonType" value="editEventButton"> Подтвердить редактирование </button><br><br>
+        Новая дата проведения: <input class="comicField" type="datetime-local" name="date"/><br>
+        Новое место проведения: <input class="comicField" type="text" name="location"/><br>
+        <button class="greenButton" name="buttonType" value="editEventButton"> Подтвердить редактирование</button>
+        <br><br>
         <% if (request.getAttribute("successMessage") != null) { %>
-        <div class="successMessage"><%= request.getAttribute("successMessage") %></div>
+        <div class="successMessage"><%= request.getAttribute("successMessage") %>
+        </div>
         <% } %>
         <% if (request.getAttribute("errorMessage") != null) { %>
-        <div class="errorMessage"><%= request.getAttribute("errorMessage") %></div>
+        <div class="errorMessage"><%= request.getAttribute("errorMessage") %>
+        </div>
         <% } %>
-        <button class="greenButton" name="buttonType" value="organizerButton"> Вернуться на страницу организатора </button>
+        <button class="greenButton" name="buttonType" value="organizerButton"> Вернуться на страницу организатора
+        </button>
     </form>
 </div>
 </body>

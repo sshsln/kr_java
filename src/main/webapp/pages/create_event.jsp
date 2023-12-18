@@ -13,17 +13,21 @@
 <div class="comicClass">
     Создание мероприятия<br><br>
     <form action="create_event" method="post">
-        Название мероприятия: <input class="comicField" type="text" name="event_name" /><br>
-        Дата проведения: <input class="comicField" type="datetime-local" name="date" /><br>
-        Место проведения: <input class="comicField" type="text" name="location" /><br>
-        <button class="greenButton" name="buttonType" value="createEventButton"> Создать </button><br><br>
+        Название мероприятия: <input class="comicField" type="text" name="event_name"/><br>
+        Дата проведения: <input class="comicField" type="datetime-local" name="date"/><br>
+        Место проведения: <input class="comicField" type="text" name="location"/><br>
+        <button class="greenButton" name="buttonType" value="createEventButton"> Создать</button>
+        <br><br>
         <% if (request.getAttribute("successMessage") != null) { %>
-        <div class="successMessage"><%= request.getAttribute("successMessage") %></div>
+        <div class="successMessage"><%= request.getAttribute("successMessage") %>
+        </div>
         <% } %>
         <% if (request.getAttribute("errorMessage") != null) { %>
-        <div class="errorMessage"><%= request.getAttribute("errorMessage") %></div>
+        <div class="errorMessage"><%= request.getAttribute("errorMessage") %>
+        </div>
         <% } %>
-        <button class="greenButton" name="buttonType" value="organizerButton"> Вернуться на страницу организатора </button>
+        <button class="greenButton" name="buttonType" value="organizerButton"> Вернуться на страницу организатора
+        </button>
     </form>
 </div>
 </body>

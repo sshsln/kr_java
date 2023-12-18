@@ -1,8 +1,10 @@
 package servlets;
+
 import model.Event;
 import model.Organizer;
 import services.LoginService;
 import services.db.OrgDBService;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -10,13 +12,13 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-public class DeleteEventServlet extends HttpServlet{
+public class DeleteEventServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
         if (request.getSession().getAttribute("session") != null) {
             String session = (String) request.getSession().getAttribute("session");
             request.setAttribute("session", session);
-            response.setContentType("text/html;charset=UTF-8");
             LoginService loginService = new LoginService();
             String organizerLogin = loginService.getLoginBySession(session);
             Organizer organizer = new Organizer();
@@ -36,12 +38,12 @@ public class DeleteEventServlet extends HttpServlet{
         String[] buttonTypes = request.getParameterValues("buttonType");
         if (buttonTypes != null && buttonTypes.length > 0) {
             String buttonType = buttonTypes[0];
-            if ("editEventButton".equals(buttonType)) {
+            if ("deleteEventButton".equals(buttonType)) {
                 if (request.getSession().getAttribute("session") != null) {
                     String session = (String) request.getSession().getAttribute("session");
-                    response.addHeader("session",session);
+                    response.addHeader("session", session);
                     String selectedEventId = request.getParameter("event_id");
-                    if (selectedEventId == null || selectedEventId.trim().isEmpty()){
+                    if (selectedEventId == null || selectedEventId.trim().isEmpty()) {
                         request.setAttribute("errorMessage", "Ошибка отмены мероприятия. Мероприятие для отмены не выбрано!");
                         request.getRequestDispatcher("/pages/delete_event.jsp").forward(request, response);
                         return;
@@ -61,7 +63,6 @@ public class DeleteEventServlet extends HttpServlet{
                         request.setAttribute("errorMessage", "Ошибка отмены мероприятия.");
                         request.getRequestDispatcher("/pages/delete_event.jsp").forward(request, response);
                     }
-                    request.getRequestDispatcher("/pages/delete_event.jsp").forward(request, response);
                 }
             } else if ("organizerButton".equals(buttonType)) {
                 response.sendRedirect(request.getContextPath() + "/organizer");

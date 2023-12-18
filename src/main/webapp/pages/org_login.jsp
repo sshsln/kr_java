@@ -13,12 +13,14 @@
     Организатор, введите логин и пароль:<br><br>
     <form action="org_login" method="post">
         <label>Логин:</label><br>
-        <input class="comicField" name="login" id="login" type="text" /><br>
+        <input class="comicField" name="login" id="login" type="text"/><br>
         <label>Пароль:</label><br>
-        <input class="comicField" name="password" id="password" type="password" /><br>
+        <input class="comicField" name="password" id="password" type="password"/><br>
         <span>${requestScope.errorText}</span><br><br>
-        <button class="greenButton" name="buttonType" value="organizerButton"> Войти </button><br><br>
-    <button class="greenButton" name="buttonType" value="orgOptionsButton"> Отменить вход </button><br><br>
+        <button class="greenButton" name="buttonType" value="organizerButton"> Войти</button>
+        <br><br>
+        <button class="greenButton" name="buttonType" value="orgOptionsButton"> Отменить вход</button>
+        <br><br>
     </form>
 </div>
 </body>

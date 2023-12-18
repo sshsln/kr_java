@@ -1,17 +1,18 @@
 package servlets;
+
 import model.Organizer;
 import services.LoginService;
 import services.OrganizerService;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class OrgRegistrationServlet extends HttpServlet{
+public class OrgRegistrationServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("errorText", "");
         response.setContentType("text/html;charset=UTF-8");
         request.getRequestDispatcher("/pages/org_registration.jsp").forward(request, response);
         //super.doGet(request, response);

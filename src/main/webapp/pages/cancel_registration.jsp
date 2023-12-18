@@ -14,7 +14,7 @@
 <div class="comicClass">
     Отмена регистрации на мероприятие<br><br>
     <form action="cancel_registration" method="post">
-        Ваш email: <input class="comicField" type="email" name="email" /><br><br>
+        Ваш email: <input class="comicField" type="email" name="email"/><br><br>
         Выберите мероприятие:
         <select class="comicField" name="event_id">
             <% List<Event> events = (List<Event>) request.getAttribute("events");
@@ -26,14 +26,17 @@
             <% }
             } %>
         </select><br>
-        <button class="greenButton" name="buttonType" value="cancelRegistrationButton"> Отменить регистрацию </button><br><br>
+        <button class="greenButton" name="buttonType" value="cancelRegistrationButton"> Отменить регистрацию</button>
+        <br><br>
         <% if (request.getAttribute("successMessage") != null) { %>
-        <div class="successMessage"><%= request.getAttribute("successMessage") %></div>
+        <div class="successMessage"><%= request.getAttribute("successMessage") %>
+        </div>
         <% } %>
         <% if (request.getAttribute("errorMessage") != null) { %>
-        <div class="errorMessage"><%= request.getAttribute("errorMessage") %></div>
+        <div class="errorMessage"><%= request.getAttribute("errorMessage") %>
+        </div>
         <% } %>
-        <button class="greenButton" name="buttonType" value="visitorButton"> Вернуться на страницу посетителя </button>
+        <button class="greenButton" name="buttonType" value="visitorButton"> Вернуться на страницу посетителя</button>
     </form>
 </div>
 </body>

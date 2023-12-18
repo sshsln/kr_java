@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class DataBaseService {
 
-    protected Connection getConnect(){
+    protected Connection getConnect() {
         try {
             Class.forName("org.postgresql.Driver");
         } catch (ClassNotFoundException e) {
@@ -21,7 +21,7 @@ public class DataBaseService {
         return conn;
     }
 
-    public ResultSet select(String sql){
+    public ResultSet select(String sql) {
         Statement statement = null;
         try {
             statement = getConnect().createStatement();
@@ -33,7 +33,7 @@ public class DataBaseService {
         }
     }
 
-    public boolean insert(String sql){
+    public boolean insert(String sql) {
         boolean isSuccessful = false;
         Statement statement = null;
         try {
@@ -48,7 +48,7 @@ public class DataBaseService {
         return isSuccessful;
     }
 
-    public boolean update(String sql){
+    public boolean update(String sql) {
         boolean isSuccessful = false;
         Statement statement = null;
         try {
@@ -63,7 +63,7 @@ public class DataBaseService {
         return isSuccessful;
     }
 
-    public boolean delete (String sql){
+    public boolean delete(String sql) {
         boolean isSuccessful = false;
         Statement statement = null;
         try {

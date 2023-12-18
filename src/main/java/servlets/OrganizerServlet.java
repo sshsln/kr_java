@@ -1,14 +1,24 @@
 package servlets;
+
+import services.db.LoginDBService;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class OrganizerServlet extends HttpServlet{
+public class OrganizerServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        if (request.getSession().getAttribute("session") != null) {
+            String session = (String) request.getSession().getAttribute("session");
+            request.setAttribute("session", session);
+            LoginDBService loginDBService = new LoginDBService();
+            String organizerName = loginDBService.getOrgNameBySession(session);
+            request.setAttribute("organizerName", organizerName);
+        }
         request.getRequestDispatcher("/pages/organizer.jsp").forward(request, response);
     }
 
