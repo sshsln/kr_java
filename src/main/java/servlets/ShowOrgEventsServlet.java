@@ -30,7 +30,6 @@ public class ShowOrgEventsServlet extends HttpServlet{
             } else {
                 request.setAttribute("events", events);
                 request.getRequestDispatcher("/pages/show_org_events.jsp").forward(request, response);
-
             }
             super.doGet(request, response);
         } else {
