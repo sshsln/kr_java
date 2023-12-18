@@ -20,11 +20,11 @@
                 if (events != null) {
                     for (Event event : events) { %>
             <option value="<%= event.getId_e() %>">
-                <%= event.getEvent_name() %> - <%= event.getDate() %>
+                <%= event.getEvent_name() %> ; <%= event.getDate() %>
             </option>
             <% }
             } %>
-        </select><br>
+        </select><br><br>
         Ваше имя: <input class="comicField" type="text" name="visitor_name"/><br><br>
         Ваш email: <input class="comicField" type="email" name="email"/><br><br>
         <button class="greenButton" name="buttonType" value="registrationButton"> Зарегистрироваться</button>

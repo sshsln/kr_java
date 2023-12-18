@@ -20,13 +20,13 @@
                 if (events != null) {
                     for (Event event : events) { %>
             <option value="<%= event.getId_e() %>">
-                <%= event.getEvent_name() %> - <%= event.getDate() %> - <%= event.getLocation() %>
+                <%= event.getEvent_name() %> ; <%= event.getDate() %> ; <%= event.getLocation() %>
             </option>
             <% }
             } %>
-        </select><br>
-        Новая дата проведения: <input class="comicField" type="datetime-local" name="date"/><br>
-        Новое место проведения: <input class="comicField" type="text" name="location"/><br>
+        </select><br><br>
+        Новая дата проведения: <input class="comicField" type="datetime-local" name="date"/><br><br>
+        Новое место проведения: <input class="comicField" type="text" name="location"/><br><br>
         <button class="greenButton" name="buttonType" value="editEventButton"> Подтвердить редактирование</button>
         <br><br>
         <% if (request.getAttribute("successMessage") != null) { %>

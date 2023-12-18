@@ -13,9 +13,9 @@
 <div class="comicClass">
     Создание мероприятия<br><br>
     <form action="create_event" method="post">
-        Название мероприятия: <input class="comicField" type="text" name="event_name"/><br>
-        Дата проведения: <input class="comicField" type="datetime-local" name="date"/><br>
-        Место проведения: <input class="comicField" type="text" name="location"/><br>
+        Название мероприятия: <input class="comicField" type="text" name="event_name"/><br><br>
+        Дата проведения: <input class="comicField" type="datetime-local" name="date"/><br><br>
+        Место проведения: <input class="comicField" type="text" name="location"/><br><br>
         <button class="greenButton" name="buttonType" value="createEventButton"> Создать</button>
         <br><br>
         <% if (request.getAttribute("successMessage") != null) { %>

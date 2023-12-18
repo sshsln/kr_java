@@ -12,11 +12,11 @@
 <div class="comicClass">
     Выберите действие:<br><br>
     <form action="org_options" method="post">
-        <button class="greenButton" name="buttonType" value="loginButton"> Войти</button>
+        <button class="greenButton" name="buttonType" value="loginButton">Авторизоваться</button>
         <br><br>
-        <button class="greenButton" name="buttonType" value="registerButton"> Зарегистрироваться</button>
+        <button class="greenButton" name="buttonType" value="registerButton">Зарегистрироваться</button>
         <br><br>
-        <button class="greenButton" name="buttonType" value="exitButton"> Вернуться на главную страницу</button>
+        <button class="greenButton" name="buttonType" value="exitButton">Вернуться на главную страницу</button>
         <br><br>
     </form>
 </div>

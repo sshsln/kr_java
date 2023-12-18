@@ -21,11 +21,11 @@
                 if (events != null) {
                     for (Event event : events) { %>
             <option value="<%= event.getId_e() %>">
-                <%= event.getEvent_name() %> - <%= event.getDate() %>
+                <%= event.getEvent_name() %> ; <%= event.getDate() %>
             </option>
             <% }
             } %>
-        </select><br>
+        </select><br><br>
         <button class="greenButton" name="buttonType" value="cancelRegistrationButton"> Отменить регистрацию</button>
         <br><br>
         <% if (request.getAttribute("successMessage") != null) { %>

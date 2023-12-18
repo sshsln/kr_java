@@ -10,7 +10,7 @@
 
 <body bgcolor=DarkSeaGreen>
 <div class="comicClass">
-    Организатор, создайте учетную запись:<br><br>
+    Организатор, создайте учётную запись:<br><br>
     <form action="org_registration" method="post">
         <label>Логин:</label><br>
         <input class="comicField" name="login" id="login" type="text"/><br>
@@ -18,10 +18,10 @@
         <input class="comicField" name="org_name" id="org_name" type="text"/><br>
         <label>Пароль:</label><br>
         <input class="comicField" name="password" id="password" type="password"/><br>
-        <span>${requestScope.errorText}</span><br><br>
-        <button class="greenButton" name="buttonType" value="organizerButton"> Войти</button>
+        <span>${requestScope.errorText}</span><br>
+        <button class="greenButton" name="buttonType" value="organizerButton">Зарегистрироваться</button>
         <br><br>
-        <button class="greenButton" name="buttonType" value="orgOptionsButton"> Отменить регистрацию</button>
+        <button class="greenButton" name="buttonType" value="orgOptionsButton">Отменить регистрацию</button>
         <br><br>
     </form>
 </div>

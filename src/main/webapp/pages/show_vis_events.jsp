@@ -48,7 +48,7 @@
     </table>
         <% } else { %>
         <% } %>
-    <br><span>${requestScope.errorText}</span><br><br>
+    <span>${requestScope.errorText}</span><br>
     <form action="show_vis_events" method="post">
         <button class="greenButton" name="buttonType" value="visitorButton"> Вернуться на страницу посетителя</button>
     </form>

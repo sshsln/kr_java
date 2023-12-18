@@ -20,11 +20,11 @@
                 if (events != null) {
                     for (Event event : events) { %>
             <option value="<%= event.getId_e() %>">
-                <%= event.getEvent_name() %> - <%= event.getDate() %> - <%= event.getLocation() %>
+                <%= event.getEvent_name() %> ; <%= event.getDate() %> ; <%= event.getLocation() %>
             </option>
             <% }
             } %>
-        </select><br>
+        </select><br><br>
         <button class="greenButton" name="buttonType" value="deleteEventButton"> Отменить мероприятие</button>
         <br><br>
         <% if (request.getAttribute("successMessage") != null) { %>
