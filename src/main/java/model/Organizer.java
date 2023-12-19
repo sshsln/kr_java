@@ -3,14 +3,12 @@ package model;
 import lombok.Data;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.List;
 
 @Data
 public class Organizer {
     private String login;
     private String org_name;
     private String password;
-    private List<Event> eventList;
 
     public Organizer() {
     }

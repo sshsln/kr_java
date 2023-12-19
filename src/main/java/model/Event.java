@@ -3,7 +3,6 @@ package model;
 import lombok.Data;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.List;
 
 @Data
 public class Event {
@@ -14,19 +13,17 @@ public class Event {
     private String organizerName;
     private String location;
     private Integer vis_count;
-    private List<Registration> registrationList;
 
     public Event() {
     }
 
-    public Event(Integer id_e, String event_name, String date, Organizer organizer, String location, Integer vis_count, List<Registration> registrationList) {
+    public Event(Integer id_e, String event_name, String date, Organizer organizer, String location, Integer vis_count) {
         this.id_e = id_e;
         this.event_name = event_name;
         this.date = date;
         this.organizer = organizer;
         this.location = location;
         this.vis_count = vis_count;
-        this.registrationList = registrationList;
     }
 
     public Event(HttpServletRequest request) {

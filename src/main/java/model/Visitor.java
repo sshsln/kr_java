@@ -2,14 +2,11 @@ package model;
 
 import lombok.Data;
 
-import java.util.List;
-
 @Data
 public class Visitor {
     private Integer id_v;
     private String visitor_name;
     private String email;
-    private List<Registration> registrationList;
 
     public Visitor() {
     }
