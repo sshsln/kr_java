@@ -14,13 +14,6 @@ public class Visitor {
     public Visitor() {
     }
 
-    public Visitor(Integer id_v, String visitor_name, String email, List<Registration> registrationList) {
-        this.id_v = id_v;
-        this.visitor_name = visitor_name;
-        this.email = email;
-        this.registrationList = registrationList;
-    }
-
     public Integer getId_v() {
         return id_v;
     }
@@ -43,13 +36,5 @@ public class Visitor {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public List<Registration> getRegistrationList() {
-        return registrationList;
-    }
-
-    public void setRegistrationList(List<Registration> registrationList) {
-        this.registrationList = registrationList;
     }
 }

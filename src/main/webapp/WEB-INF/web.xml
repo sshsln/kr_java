@@ -9,7 +9,6 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
         <servlet-name>index</servlet-name>
         <servlet-class>servlets.IndexServlet</servlet-class>
     </servlet>
-
     <servlet-mapping>
         <servlet-name>index</servlet-name>
         <url-pattern>/index</url-pattern>
@@ -19,7 +18,6 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
         <servlet-name>org_options</servlet-name>
         <servlet-class>servlets.OrgOptionsServlet</servlet-class>
     </servlet>
-
     <servlet-mapping>
         <servlet-name>org_options</servlet-name>
         <url-pattern>/org_options</url-pattern>
@@ -29,7 +27,6 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
         <servlet-name>visitor</servlet-name>
         <servlet-class>servlets.VisitorServlet</servlet-class>
     </servlet>
-
     <servlet-mapping>
         <servlet-name>visitor</servlet-name>
         <url-pattern>/visitor</url-pattern>
@@ -39,7 +36,6 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
         <servlet-name>org_login</servlet-name>
         <servlet-class>servlets.OrgLoginServlet</servlet-class>
     </servlet>
-
     <servlet-mapping>
         <servlet-name>org_login</servlet-name>
         <url-pattern>/org_login</url-pattern>
@@ -49,7 +45,6 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
         <servlet-name>org_registration</servlet-name>
         <servlet-class>servlets.OrgRegistrationServlet</servlet-class>
     </servlet>
-
     <servlet-mapping>
         <servlet-name>org_registration</servlet-name>
         <url-pattern>/org_registration</url-pattern>
@@ -59,7 +54,6 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
         <servlet-name>organizer</servlet-name>
         <servlet-class>servlets.OrganizerServlet</servlet-class>
     </servlet>
-
     <servlet-mapping>
         <servlet-name>organizer</servlet-name>
         <url-pattern>/organizer</url-pattern>
@@ -69,7 +63,6 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
         <servlet-name>create_event</servlet-name>
         <servlet-class>servlets.CreateEventServlet</servlet-class>
     </servlet>
-
     <servlet-mapping>
         <servlet-name>create_event</servlet-name>
         <url-pattern>/create_event</url-pattern>
@@ -79,7 +72,6 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
         <servlet-name>show_org_events</servlet-name>
         <servlet-class>servlets.ShowOrgEventsServlet</servlet-class>
     </servlet>
-
     <servlet-mapping>
         <servlet-name>show_org_events</servlet-name>
         <url-pattern>/show_org_events</url-pattern>
@@ -89,7 +81,6 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
         <servlet-name>edit_event</servlet-name>
         <servlet-class>servlets.EditEventServlet</servlet-class>
     </servlet>
-
     <servlet-mapping>
         <servlet-name>edit_event</servlet-name>
         <url-pattern>/edit_event</url-pattern>
@@ -99,7 +90,6 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
         <servlet-name>delete_event</servlet-name>
         <servlet-class>servlets.DeleteEventServlet</servlet-class>
     </servlet>
-
     <servlet-mapping>
         <servlet-name>delete_event</servlet-name>
         <url-pattern>/delete_event</url-pattern>
@@ -109,7 +99,6 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
         <servlet-name>show_vis_events</servlet-name>
         <servlet-class>servlets.ShowVisEventsServlet</servlet-class>
     </servlet>
-
     <servlet-mapping>
         <servlet-name>show_vis_events</servlet-name>
         <url-pattern>/show_vis_events</url-pattern>
@@ -119,7 +108,6 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
         <servlet-name>registration</servlet-name>
         <servlet-class>servlets.RegistrationServlet</servlet-class>
     </servlet>
-
     <servlet-mapping>
         <servlet-name>registration</servlet-name>
         <url-pattern>/registration</url-pattern>
@@ -129,7 +117,6 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
         <servlet-name>cancel_registration</servlet-name>
         <servlet-class>servlets.CancelRegistrationServlet</servlet-class>
     </servlet>
-
     <servlet-mapping>
         <servlet-name>cancel_registration</servlet-name>
         <url-pattern>/cancel_registration</url-pattern>

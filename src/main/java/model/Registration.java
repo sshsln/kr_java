@@ -16,14 +16,6 @@ public class Registration {
         this.reg_time = reg_time;
     }
 
-    public Integer getId_r() {
-        return id_r;
-    }
-
-    public void setId_r(Integer id_r) {
-        this.id_r = id_r;
-    }
-
     public Event getEvent() {
         return event;
     }
@@ -38,13 +30,5 @@ public class Registration {
 
     public void setVisitor(Visitor visitor) {
         this.visitor = visitor;
-    }
-
-    public String getReg_time() {
-        return reg_time;
-    }
-
-    public void setReg_time(String reg_time) {
-        this.reg_time = reg_time;
     }
 }

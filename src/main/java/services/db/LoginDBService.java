@@ -23,11 +23,7 @@ public class LoginDBService {
         DataBaseService dataBaseService = new DataBaseService();
         String sql = "INSERT INTO sessions (login, session)\n" +
                 "VALUES ('" + login + "', '" + session + "')";
-        if (dataBaseService.insert(sql)) {
-            // логика на успех
-        } else {
-            // ошибка
-        }
+        dataBaseService.insert(sql);
 
     }
 

@@ -91,12 +91,4 @@ public class Event {
     public void setVis_count(Integer vis_count) {
         this.vis_count = vis_count;
     }
-
-    public List<Registration> getRegistrationList() {
-        return registrationList;
-    }
-
-    public void setRegistrationList(List<Registration> registrationList) {
-        this.registrationList = registrationList;
-    }
 }

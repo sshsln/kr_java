@@ -15,13 +15,6 @@ public class Organizer {
     public Organizer() {
     }
 
-    public Organizer(String login, String org_name, String password, List<Event> eventList) {
-        this.login = login;
-        this.org_name = org_name;
-        this.password = password;
-        this.eventList = eventList;
-    }
-
     public Organizer(HttpServletRequest request) {
         this.login = request.getParameter("login");
         this.org_name = request.getParameter("org_name");
@@ -40,23 +33,11 @@ public class Organizer {
         return org_name;
     }
 
-    public void setOrg_name(String org_name) {
-        this.org_name = org_name;
-    }
-
     public String getPassword() {
         return password;
     }
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public List<Event> getEventList() {
-        return eventList;
-    }
-
-    public void setEventList(List<Event> eventList) {
-        this.eventList = eventList;
     }
 }
