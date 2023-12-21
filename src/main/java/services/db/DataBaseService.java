@@ -22,9 +22,8 @@ public class DataBaseService {
     }
 
     public ResultSet select(String sql) {
-        Statement statement = null;
         try {
-            statement = getConnect().createStatement();
+            Statement statement = getConnect().createStatement();
             ResultSet rs = statement.executeQuery(sql);
             return rs;
         } catch (SQLException throwables) {
@@ -35,9 +34,8 @@ public class DataBaseService {
 
     public boolean insert(String sql) {
         boolean isSuccessful = false;
-        Statement statement = null;
         try {
-            statement = getConnect().createStatement();
+            Statement statement = getConnect().createStatement();
             int rowsAffected = statement.executeUpdate(sql);
             if (rowsAffected > 0) {
                 isSuccessful = true;
@@ -50,9 +48,8 @@ public class DataBaseService {
 
     public boolean update(String sql) {
         boolean isSuccessful = false;
-        Statement statement = null;
         try {
-            statement = getConnect().createStatement();
+            Statement statement = getConnect().createStatement();
             int rowsAffected = statement.executeUpdate(sql);
             if (rowsAffected > 0) {
                 isSuccessful = true;
@@ -65,9 +62,8 @@ public class DataBaseService {
 
     public boolean delete(String sql) {
         boolean isSuccessful = false;
-        Statement statement = null;
         try {
-            statement = getConnect().createStatement();
+            Statement statement = getConnect().createStatement();
             int rowsAffected = statement.executeUpdate(sql);
             if (rowsAffected > 0) {
                 isSuccessful = true;

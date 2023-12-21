@@ -41,7 +41,7 @@ public class CancelRegistrationServlet extends HttpServlet {
                 VisDBService visDBService = new VisDBService();
                 boolean checkReg = visDBService.isRegistrationExist(email, Integer.parseInt(selectedEventId));
                 if (checkReg) {
-                    boolean regExist = visDBService.cancelRegistration(email, Integer.parseInt(selectedEventId));
+                    visDBService.cancelRegistration(email, Integer.parseInt(selectedEventId));
                     request.setAttribute("successMessage", "Регистрация на мероприятие отменена!");
                 } else {
                     request.setAttribute("errorMessage", "Ошибка. Вы не регистрировались на это мероприятие.");

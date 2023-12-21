@@ -44,9 +44,9 @@ public class RegistrationServlet extends HttpServlet {
                 boolean checkUser = visDBService.isUserExist(email);
                 int visitorId;
                 if (checkUser) {
-                    boolean userExist = visDBService.editVisName(visitor);
+                    visDBService.editVisName(visitor);
                 } else {
-                    boolean userNew = visDBService.createVisitor(visitor);
+                    visDBService.createVisitor(visitor);
                 }
                 Visitor newVisitor = visDBService.getVisitorByEmail(visitor.getEmail());
                 visitorId = newVisitor.getId_v();

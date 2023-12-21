@@ -8,7 +8,7 @@ public class LoginDBService {
     public String getOrgPassByLogin(String login) {
         String password = null;
         DataBaseService dataBaseService = new DataBaseService();
-        String sql = "select o.\"password\" from organizer o where o.login = '" + login + "' ";
+        String sql = "SELECT o.\"password\" FROM organizer o WHERE o.login = '" + login + "' ";
         ResultSet resultSet = dataBaseService.select(sql);
         try {
             resultSet.next();
@@ -24,19 +24,18 @@ public class LoginDBService {
         String sql = "INSERT INTO sessions (login, session)\n" +
                 "VALUES ('" + login + "', '" + session + "')";
         dataBaseService.insert(sql);
-
     }
 
     public void cleanSession(String login) {
         DataBaseService dataBaseService = new DataBaseService();
-        String sql = "delete from sessions s where s.login = '" + login + "'";
+        String sql = "DELETE FROM sessions s WHERE s.login = '" + login + "'";
         dataBaseService.delete(sql);
     }
 
     public String getUserLoginBySession(String session) {
         String login = null;
         DataBaseService dataBaseService = new DataBaseService();
-        String sql = "select s.login from sessions s where s.\"session\" = '" + session + "'";
+        String sql = "SELECT s.login FROM sessions s WHERE s.\"session\" = '" + session + "'";
         ResultSet resultSet = dataBaseService.select(sql);
         try {
             resultSet.next();

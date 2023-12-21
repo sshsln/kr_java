@@ -12,7 +12,6 @@ public class HashService {
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
-
         byte[] hashedBytes = digest.digest(text.getBytes());
         StringBuilder sb = new StringBuilder();
         for (byte b : hashedBytes) {

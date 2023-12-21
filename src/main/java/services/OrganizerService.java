@@ -4,6 +4,7 @@ import model.Organizer;
 import services.db.OrgDBService;
 
 public class OrganizerService {
+
     public String saveNewOrg(Organizer organizer) {
         OrgDBService orgDBService = new OrgDBService();
         HashService hashService = new HashService();
@@ -22,6 +23,5 @@ public class OrganizerService {
         OrgDBService orgDBService = new OrgDBService();
         return orgDBService.isLoginUnique(login);
     }
-
 
 }
